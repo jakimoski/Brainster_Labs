@@ -1,0 +1,57 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $color-dark-blue;
+  color: $color-white;
+  &__box {
+    flex: 1 1 33%;
+    &:not(:first-child) {
+      border-left: 1px solid rgba($color-gray, 0.5);
+    }
+    @include screenSize(tablet) {
+      flex: 1 1 100%;
+      &:not(:first-child) {
+        border-top: 1px solid rgba($color-gray, 0.5);
+        border-left: none;
+      }
+    }
+  }
+  &__input {
+    display: none;
+    &:checked + label {
+      background-color: $color-secondary;
+      color: $color-dark-blue;
+      text-shadow: 1px 1px 1px rgba($color-white, 0.1);
+      animation: wipe-in-right 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+    }
+    &:checked + label i {
+      scale: 1;
+      animation: bounce-in-fwd 0.5s 0.3s both;
+    }
+  }
+  &__label {
+    width: 100%;
+    height: 100%;
+    padding: rem-calc(10);
+    @include title-2;
+    cursor: pointer;
+    padding: $gutter-base $gutter-base-s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include screenSize(phone) {
+      padding: $gutter-base-s $gutter-base-xs;
+    }
+  }
+  &__icon {
+    scale: 0;
+    margin-left: rem-calc(20);
+    font-size: rem-calc(36);
+    @include screenSize(tablet) {
+      font-size: rem-calc(26);
+    }
+  }
+}

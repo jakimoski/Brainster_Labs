@@ -1,0 +1,127 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+.employ-form {
+  margin: $gutter-base-xl 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  &__box {
+    @include flex-basis("50%", m);
+    margin-bottom: $gutter-base;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    position: relative;
+    @include screenSize(tablet) {
+      flex-basis: 100%;
+    }
+  }
+  &__label {
+    display: block;
+    width: 100%;
+    font-size: rem-calc(20);
+    font-weight: 700;
+    margin-bottom: rem-calc(10);
+  }
+  &__input {
+    width: 100%;
+    padding: rem-calc(20);
+    border: 0;
+    border-radius: 5px;
+    &:focus:invalid {
+      outline: 2px solid red;
+    }
+    &:valid {
+      outline: 2px solid green;
+    }
+    &::placeholder {
+      font-style: italic;
+      font-size: 16px;
+    }
+  }
+  &__error-message {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    color: red;
+    @include small-2;
+  }
+}
+.invalid {
+  outline: 2px solid red;
+}
+.valid {
+  outline: 2px solid green;
+}
+.hide-form {
+  display: none;
+}
+// Custom select options input
+.custom-select {
+  position: relative;
+  width: 100%;
+  font-size: inherit;
+  font-weight: 500;
+  select {
+    display: none; /*hide original SELECT element:*/
+  }
+}
+
+.select-selected {
+  background-color: $color-white;
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: rem-calc(10);
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: black transparent transparent transparent;
+  }
+  &.select-arrow-active:after {
+    border-color: transparent transparent black transparent;
+    top: 40%;
+  }
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  width: 100%;
+  padding: rem-calc(20);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: $color-white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  margin-top: rem-calc(10);
+  overflow: hidden;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.select-items {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}

@@ -1,0 +1,93 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+// Banner Heading animation
+@keyframes back {
+  from {
+    background-position: -1863px;
+  }
+  to {
+    background-position: 1863px;
+  }
+}
+// Page on load Animation
+@keyframes square-in-hesitate {
+  0% {
+    -webkit-clip-path: inset(100% 100% 100% 100%);
+    clip-path: inset(100% 100% 100% 100%);
+  }
+  40% {
+    -webkit-clip-path: inset(33% 33% 33% 33%);
+    clip-path: inset(33% 33% 33% 33%);
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+// Bounce Animation - Filter Icons
+@keyframes bounce-in-fwd {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  72% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  81% {
+    -webkit-transform: scale(0.84);
+    transform: scale(0.84);
+  }
+  89% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  95% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+// Filters Animation
+@keyframes wipe-in-right {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    scale: 0.5;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes card-scale {
+  from {
+    scale: 0.5;
+  }
+  to {
+    scale: 1;
+  }
+}

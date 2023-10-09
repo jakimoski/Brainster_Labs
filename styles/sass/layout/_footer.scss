@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+
+.footer {
+  padding: 20px;
+  background-color: $color-dark-blue;
+  color: $color-white;
+  text-align: center;
+  &__icon {
+    font-size: 20px;
+    color: transparent;
+    background: $color-white
+      linear-gradient(
+        180deg,
+        rgba($color-secondary, 0.3),
+        $color-secondary 40% 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}

@@ -1,0 +1,78 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  color: $color-white;
+  background: $color-secondary;
+  padding: $gutter-base-xs $gutter-base;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+    box-shadow: -3px 3px 10px rgba($color-secondary, 0.3);
+    transition: all 0.2s ease-in-out;
+  }
+  &:active {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+    box-shadow: none;
+  }
+  &--form {
+    width: 100%;
+    padding: $gutter-base-s $gutter-base;
+    margin: 0;
+  }
+}
+.load-more {
+  display: none;
+  margin: 0 auto;
+  margin-top: rem-calc(40);
+  @include screenSize(tablet) {
+    display: block;
+  }
+}
+.hide-btn {
+  display: none !important;
+}
+.back-to-top {
+  position: fixed;
+  right: rem-calc(30);
+  bottom: rem-calc(30);
+  font-size: rem-calc(20);
+  width: rem-calc(50);
+  height: rem-calc(50);
+  border-radius: 50%;
+  cursor: pointer;
+  color: $color-white;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid $color-primary;
+  background-color: $color-dark-blue;
+  box-shadow: -3px 3px 10px rgba($color-dark-blue, 0.3);
+  display: none;
+  transition: all 0.2s ease-in-out;
+  @include screenSize(tablet) {
+    right: rem-calc(10);
+    bottom: rem-calc(30);
+    width: rem-calc(40);
+    height: rem-calc(40);
+  }
+  &:hover {
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+    box-shadow: -5px 5px 20px rgba($color-dark-blue, 0.3);
+  }
+  &:active {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+  &--show {
+    display: block;
+    animation: scale 0.3s ease-in-out;
+  }
+}

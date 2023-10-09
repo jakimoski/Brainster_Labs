@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Brainster Labs" />
+    <meta name="keywords" content="Brainster Labs" />
+    <meta name="author" content="Vlatko Jakimoski" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./img/brainster-favicon.png" />
+    <!-- Font Awsome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Cystom Styles -->
+    <link rel="stylesheet" href="./styles/css/main.css" />
+    <title>Brainster Labs - Form</title>
+  </head>
+  <body>
+    <div class="scroll-wrapper">
+      <!-- Main Navigation -->
+      <header class="header">
+        <div class="header__wrapper">
+          <a class="header__logo" href="./index.html"
+            ><img src="./img/Brainster-Logo.png" alt="Brainster-Logo"
+          /></a>
+          <button class="nav__toggle" aria-controls="primary-navigation">
+            <span></span>
+          </button>
+          <nav aria-label="Main Navigation" class="nav">
+            <ul class="nav__list" id="primary-navigation">
+              <li class="nav__list-item">
+                <a
+                  class="nav__list-link"
+                  href="https://marketpreneurs.brainster.co"
+                  target="_blank"
+                  >Академија за маркетинг</a
+                >
+              </li>
+              <li class="nav__list-item">
+                <a
+                  class="nav__list-link"
+                  href="https://codepreneurs.brainster.co"
+                  target="_blank"
+                  >Академија за пограмирање</a
+                >
+              </li>
+              <li class="nav__list-item">
+                <a
+                  class="nav__list-link"
+                  href="https://brainster.co/data-science/"
+                  target="_blank"
+                  >Академија data science</a
+                >
+              </li>
+              <li class="nav__list-item">
+                <a
+                  class="nav__list-link"
+                  href="https://design.brainster.co"
+                  target="_blank"
+                  >Академија за дизајн</a
+                >
+              </li>
+            </ul>
+            <a class="btn nav__btn" href="./form.html">Вработи наш студент</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Form section -->
+      <section class="form-section">
+        <div class="form-section__wrapper">
+          <h1 class="heading-1">Вработи Студенти</h1>
+          <!-- form -->
+          <form action="GET" class="employ-form" novalidate>
+            <div class="employ-form__box">
+              <label class="employ-form__label" for="clientname"
+                >Име и презиме</label
+              >
+              <input
+                class="employ-form__input"
+                type="text"
+                id="clientname"
+                placeholder="Вашето име и презиме"
+                pattern="^[a-zA-Z]+$"
+                autocomplete="on"
+                required
+              />
+              <span
+                class="employ-form__error-message"
+                id="clientname-error"
+              ></span>
+            </div>
+            <div class="employ-form__box">
+              <label class="employ-form__label" for="company"
+                >Име на компанијата</label
+              >
+              <input
+                class="employ-form__input"
+                type="text"
+                id="company"
+                placeholder="Име на вашата компанијата"
+                autocomplete="on"
+                required
+              />
+              <span
+                class="employ-form__error-message"
+                id="company-error"
+              ></span>
+            </div>
+            <div class="employ-form__box">
+              <label class="employ-form__label" for="email"
+                >Контакт имејл</label
+              >
+              <input
+                class="employ-form__input"
+                type="email"
+                id="email"
+                placeholder="Контакт имајл на вашата компанија"
+                autocomplete="on"
+                required
+              />
+              <span class="employ-form__error-message" id="email-error"></span>
+            </div>
+            <div class="employ-form__box">
+              <label class="employ-form__label" for="telephone"
+                >Контакт телефон</label
+              >
+              <input
+                class="employ-form__input"
+                type="tel"
+                id="telephone"
+                placeholder="Контакт телефон на вашата компанија"
+                pattern="(\+\d{1,3})?(\d{3}-\d{3}-\d{3}|\d{9})"
+                autocomplete="on"
+                required
+              />
+              <span
+                class="employ-form__error-message"
+                id="telephone-error"
+              ></span>
+            </div>
+            <div class="employ-form__box">
+              <label class="employ-form__label" for="students"
+                >Тип на студенти</label
+              >
+              <div role="combobox" class="custom-select link">
+                <select class="employ-form__input" id="students" required>
+                  >
+                  <option value="" disabled selected>
+                    Изберете тип на студент
+                  </option>
+                  <option value="marketing">Студенти од маркетинг</option>
+                  <option value="coding">Студенти од пограмирање</option>
+                  <option value="data">Студенти од data science</option>
+                  <option value="design">Студенти од дизајн</option>
+                </select>
+              </div>
+              <span
+                class="employ-form__error-message"
+                id="students-error"
+              ></span>
+            </div>
+            <div class="employ-form__box">
+              <button class="btn btn--form" type="submit">Испрати</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="footer__text">
+          Изработено со <i class="fa-solid fa-heart footer__icon"></i> од
+          студентите на Brainster
+        </p>
+      </footer>
+    </div>
+    <button class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+    <script src="./js/main.js"></script>
+    <script src="./js/form.js"></script>
+  </body>
+</html>

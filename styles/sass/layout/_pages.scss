@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+// Main wrapper for the pages
+.scroll-wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 20px;
+  transform-style: preserve-3d;
+  animation: square-in-hesitate 2.5s cubic-bezier(0.25, 1, 0.3, 1);
+  background: $color-primary;
+}
+
+// Prevents scrolling when mobile menu is open
+.over-hidden {
+  overflow-y: hidden;
+}
+
+// Cards section
+.cards {
+  background-color: $color-primary;
+  padding: rem-calc(50) 0;
+  &__heading {
+    margin-bottom: 50px;
+  }
+  &__wrapper {
+    @extend %wrap;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter-base;
+  }
+}
+// form section
+.form-section {
+  background-color: $color-primary;
+  padding: rem-calc(50) 0;
+  min-height: 100vh;
+  &__wrapper {
+    @extend %wrap;
+  }
+}

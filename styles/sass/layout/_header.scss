@@ -1,0 +1,178 @@
+@use "../abstracts/" as *;
+
+@use "sass:math";
+.header {
+  background-color: $color-primary;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  position: relative;
+  &__wrapper {
+    display: flex;
+    transform-style: preserve-3d;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    padding: $gutter-base-s 0;
+    @include screenSize(tablet) {
+      width: 100%;
+      padding: $gutter-base-xs rem-calc(15);
+    }
+  }
+  &__logo {
+    width: rem-calc(60);
+  }
+}
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  @include screenSize(tablet) {
+    transform: translateX(100%);
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-color: $color-dark-blue;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
+  }
+  &-show {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out;
+    background-color: $color-dark-blue;
+  }
+  &__toggle {
+    display: none;
+    border: 0;
+    width: rem-calc(50);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    background: none;
+    margin-left: auto;
+    position: relative;
+    margin-right: rem-calc(10);
+    z-index: 99999;
+    @include screenSize(tablet) {
+      display: block;
+    }
+    span {
+      display: inline-block;
+      position: absolute;
+      width: rem-calc(35);
+      height: 4px;
+      background-color: $color-black;
+      border-radius: rem-calc(50);
+      transition: transform 0.3s ease-in-out;
+      &::after {
+        content: "";
+        position: absolute;
+        top: rem-calc(-10);
+        right: 0;
+        width: rem-calc(50);
+        height: 4px;
+        border-radius: rem-calc(50);
+        background-color: inherit;
+        transition-property: top, transform;
+        transition-duration: 0.2s;
+        transition-delay: 0.2s, 0s;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: rem-calc(25);
+        height: 4px;
+        border-radius: 50px;
+        background-color: inherit;
+        transition-property: top, transform;
+        transition-duration: 0.2s;
+        transition-delay: 0.2s, 0s;
+      }
+    }
+    &-show {
+      span {
+        background-color: $color-white;
+        height: 0;
+
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+          transition-delay: 0s, 0.2s;
+        }
+        &::before {
+          width: 50px;
+          top: 0;
+          transform: rotate(45deg);
+          transition-delay: 0s, 0.2s;
+        }
+      }
+    }
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: auto;
+    @include screenSize(tablet) {
+      flex-direction: column;
+      margin: 0;
+      margin-top: rem-calc(100);
+      margin-left: rem-calc(20);
+    }
+    &-item {
+      position: relative;
+      margin-right: 5px;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $color-black;
+        scale: 0 1;
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.665, 1);
+        @include screenSize(tablet) {
+          background-color: transparent;
+        }
+      }
+      &:hover::after {
+        scale: 1 1;
+      }
+      &:hover + &::after {
+        translate: -100%;
+      }
+      &:has(+ :hover)::after {
+        translate: 100%;
+      }
+    }
+    &-link {
+      display: inline-block;
+      padding: $gutter-base-xs;
+      text-decoration: none;
+      text-align: center;
+      @include screenSize(laptop) {
+        padding: math.div($gutter-base-xs, 2);
+      }
+      @include screenSize(tablet) {
+        color: $color-white;
+        padding: $gutter-base 0;
+      }
+    }
+  }
+  &__btn {
+    @include screenSize(tablet) {
+      margin-left: rem-calc(20);
+      margin-top: $gutter-base-xs;
+    }
+  }
+}

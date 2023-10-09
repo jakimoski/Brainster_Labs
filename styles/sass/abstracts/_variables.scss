@@ -1,0 +1,27 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-primary: "Ubuntu", sans-serif;
+$font-family-secondary: "Inter", sans-serif;
+
+// Spacing settings
+$gutter-base-xs: rem-calc(10);
+$gutter-base-s: rem-calc(20);
+$gutter-base: rem-calc(30);
+$gutter-base-l: rem-calc(50);
+$gutter-base-xl: rem-calc(100);
+
+// Color settings
+$text-color-base: #000;
+$text-color-red: #e65352;
+$color-primary: #fcd232;
+$color-secondary: #ff1300;
+$color-tertiary: #eb3b3b;
+$color-dark-blue: #302f38;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #a0a0ac;

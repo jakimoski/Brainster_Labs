@@ -1,0 +1,88 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+
+body {
+  font-family: $font-family-primary;
+}
+
+.heading {
+  @include banerHeading();
+  position: relative;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: url(./../../img/neon-back.png);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px #fcd232;
+  background-position: -2000px;
+  animation: back 35s linear infinite;
+  &::before {
+    content: "Brainster Labs";
+    position: absolute;
+    @include banerHeading();
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./../../img/neon-back.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px #fcd232;
+    animation: back 35s linear infinite;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+  &::after {
+    content: "Brainster Labs";
+    position: absolute;
+    @include banerHeading();
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./../../img/neon-back.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px #fcd232;
+    animation: back 35s linear infinite;
+    -webkit-filter: blur(25px);
+    filter: blur(25px);
+    -webkit-transform: perspective(100px) rotateX(225deg) scale(1.5, 1);
+    transform: perspective(100px) rotateX(225deg) scale(1.5, 1);
+  }
+}
+
+.heading-1 {
+  @include heading-1;
+  color: $color-dark-blue;
+  text-align: center;
+}
+.title {
+  @include title-1;
+}
+
+.paragraph {
+  @include paragraph;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.small-1 {
+  @include small-1;
+}
+.link {
+  @include link-text;
+}
+// Links and buttons font styles
+a,
+button {
+  @include link-text;
+  text-decoration: none;
+  font-family: $font-family-secondary;
+  color: black;
+}
