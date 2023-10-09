@@ -179,9 +179,9 @@ $font-size-line-height-map: (
 }
 // Title-1
 @mixin title-1 {
-  @include typography(xl-2, bold);
+  @include typography(xl-1, bold);
   @include screenSize(laptop) {
-    @include typography(xl-1, bold);
+    @include typography(xl, bold);
   }
   @include screenSize(tablet) {
     @include typography(xl, bold);
@@ -189,9 +189,9 @@ $font-size-line-height-map: (
 }
 // Title-2
 @mixin title-2 {
-  @include typography(xl-1, bold);
+  @include typography(xl, bold);
   @include screenSize(laptop) {
-    @include typography(xl, bold);
+    @include typography(lg, bold);
   }
 }
 // Paragraph
