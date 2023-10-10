@@ -6,7 +6,7 @@ const backTop = document.querySelector(".back-to-top");
 menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("nav__toggle-show");
   menuNav.classList.toggle("nav-show");
-  body.classList.toggle("over-hidden");
+  scroll-wrapper.classList.toggle("over-hidden");
 });
 
 // Close the menu if the screen size is larger than 768px
