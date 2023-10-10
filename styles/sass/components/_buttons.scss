@@ -59,8 +59,6 @@
   @include screenSize(tablet) {
     right: rem-calc(10);
     bottom: rem-calc(30);
-    width: rem-calc(40);
-    height: rem-calc(40);
   }
   &:hover {
     -webkit-transform: translate3d(0, -2px, 0);

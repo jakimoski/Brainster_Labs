@@ -8,7 +8,6 @@
   position: relative;
   &__wrapper {
     display: flex;
-    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     align-items: center;
     justify-content: space-between;
@@ -31,7 +30,6 @@
   justify-content: space-between;
   z-index: 999;
   @include screenSize(tablet) {
-     -webkit-transform: translateX(100%);
     transform: translateX(100%);
     position: fixed;
     inset: 0;
@@ -43,13 +41,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    -webkit-transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
     transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
   }
   &-show {
     transform: translateX(0);
     opacity: 1;
-    -webkit-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     background-color: $color-dark-blue;
   }

@@ -6,7 +6,6 @@
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 20px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation: square-in-hesitate 2.5s cubic-bezier(0.25, 1, 0.3, 1);
   background: $color-primary;
@@ -21,6 +20,7 @@
 .cards {
   background-color: $color-primary;
   padding: rem-calc(50) 0;
+  transform-style: preserve-3d;
   &__heading {
     margin-bottom: 50px;
   }

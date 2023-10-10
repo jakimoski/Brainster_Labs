@@ -220,15 +220,15 @@ body {
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 700;
   line-height: 1.3;
 }
 @media only screen and (max-width: 64em) {
   .title {
-    font-size: 1.375rem;
+    font-size: 1.125rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 }
 @media only screen and (max-width: 48em) {
@@ -463,8 +463,6 @@ button {
   .back-to-top {
     right: 0.625rem;
     bottom: 1.875rem;
-    width: 2.5rem;
-    height: 2.5rem;
   }
 }
 .back-to-top:hover {
@@ -564,9 +562,9 @@ button {
   width: 100%;
   height: 100%;
   padding: 0.625rem;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.4;
   cursor: pointer;
   padding: 1.875rem 1.25rem;
   display: flex;
@@ -575,7 +573,7 @@ button {
 }
 @media only screen and (max-width: 64em) {
   .filter__label {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1.4;
   }
@@ -675,6 +673,7 @@ button {
 @media only screen and (max-width: 48em) {
   .employ-form__box {
     flex-basis: 100%;
+    margin-bottom: 1.25rem;
   }
 }
 .employ-form__label {
@@ -691,10 +690,10 @@ button {
   border-radius: 5px;
 }
 .employ-form__input:focus:invalid {
-  outline: 2px solid red;
+  outline: 2px solid #ff1300;
 }
 .employ-form__input:valid {
-  outline: 2px solid green;
+  outline: 2px solid #1c9136;
 }
 .employ-form__input::placeholder {
   font-style: italic;
@@ -704,18 +703,18 @@ button {
   position: absolute;
   top: 105%;
   left: 0;
-  color: red;
+  color: #ff1300;
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.4;
 }
 
 .invalid {
-  outline: 2px solid red;
+  outline: 2px solid #ff1300;
 }
 
 .valid {
-  outline: 2px solid green;
+  outline: 2px solid #1c9136;
 }
 
 .hide-form {
@@ -743,10 +742,10 @@ button {
   width: 0;
   height: 0;
   border: 6px solid transparent;
-  border-color: black transparent transparent transparent;
+  border-color: #000000 transparent transparent transparent;
 }
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent black transparent;
+  border-color: transparent transparent #000000 transparent;
   top: 40%;
 }
 
