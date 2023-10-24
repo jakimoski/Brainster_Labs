@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Brainster Labs - project01 by Vlatko Jakimoski
 
 ## About
@@ -21,3 +22,7 @@ https://git.brainster.co/Vlatko.Jakimoski-FE15/brainster_projects_vlatkojakimosk
 ## Feedback and Review
 
 I would appreciate if you can provide feedback and comments on my submitted solutions.
+=======
+# Brainster_Labs
+Barinster Lasbs is a fictional website where all projects of Brainster students will be presented and also serve as a hiring place for the sudents.
+>>>>>>> dd66a3a5fc7a2c97f9df7a60bfd2db089a683322
