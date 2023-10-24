@@ -27,6 +27,9 @@
     width: 100%;
     padding: $gutter-base-s $gutter-base;
     margin: 0;
+    @include screenSize(tablet) {
+      margin-top: $gutter-base-xs;
+    }
   }
 }
 .load-more {

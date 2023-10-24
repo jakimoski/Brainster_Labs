@@ -1,0 +1,14 @@
+{
+  "name": "brainster_labs",
+  "version": "1.0.0",
+  "description": "project 01 braibster labs",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass styles/sass/main.scss styles/css/main.css -w"
+  },
+  "author": "Vlatko Jakimoski",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}

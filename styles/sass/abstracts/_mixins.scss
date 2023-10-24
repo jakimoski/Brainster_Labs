@@ -193,6 +193,9 @@ $font-size-line-height-map: (
   @include screenSize(laptop) {
     @include typography(lg, bold);
   }
+  @include screenSize(phone) {
+    @include typography(md, bold);
+  }
 }
 // Paragraph
 @mixin paragraph {

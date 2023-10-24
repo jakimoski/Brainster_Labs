@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Vlatko Jakimoski" />
     <meta name="description" content="Brainster Labs" />
     <meta name="keywords" content="Brainster Labs" />
-    <meta name="author" content="Vlatko Jakimoski" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Brainster Labs" />
+    <meta property="og:image" content="./img/Brainster-image.jpg" />
     <link rel="icon" type="image/x-icon" href="./img/brainster-favicon.png" />
     <!-- Font Awsome CDN -->
     <link
@@ -27,7 +29,11 @@
           <a class="header__logo" href="./index.html"
             ><img src="./img/Brainster-Logo.png" alt="Brainster-Logo"
           /></a>
-          <button class="nav__toggle" aria-controls="primary-navigation">
+          <button
+            class="nav__toggle"
+            aria-label="Menu Toggle"
+            aria-controls="primary-navigation"
+          >
             <span></span>
           </button>
           <nav aria-label="Main Navigation" class="nav">
@@ -632,7 +638,9 @@
         </p>
       </footer>
     </div>
-    <button class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <script src="./js/main.js"></script>
     <script src="./js/filters.js"></script>
   </body>
